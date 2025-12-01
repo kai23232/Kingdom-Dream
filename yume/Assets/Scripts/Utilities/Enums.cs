@@ -1,18 +1,21 @@
-// 房间类型枚举（用于标识地牢/关卡中不同功能的房间）
+
+using System;
+
+[Flags]
 public enum RoomType
 {
     // 普通敌人房间（基础怪物战斗场景）
-    MinorEnemy,
+    MinorEnemy = 1,
     // 精英敌人房间（高难度怪物战斗，掉落更优奖励）
-    EliteEnemy,
+    EliteEnemy = 2,
     // 商店房间（可消耗货币购买道具/装备）
-    Shop,
+    Shop = 4,
     // 宝藏房间（无战斗，包含宝箱/资源奖励）
-    Treasure,
+    Treasure = 8,
     // 休息房间（恢复血量/状态，可解锁临时增益）
-    RestRoom,
+    RestRoom = 16,
     // 首领房间（最终/阶段性BOSS战，核心奖励获取点）
-    Boss
+    Boss = 32
 }
 
 // 房间状态枚举（用于标记房间在关卡流程中的状态）
