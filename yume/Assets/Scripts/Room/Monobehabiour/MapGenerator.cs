@@ -24,11 +24,13 @@ public class MapGenerator : MonoBehaviour
     
     //房间数据
     public List<RoomDataSO> roomDataSOList;
+    private Dictionary<RoomType,RoomDataSO> roomDataDic = new Dictionary<RoomType, RoomDataSO>();
     
     //房间
     private List<Room> roomList = new List<Room>();
     //连线
     private List<LineRenderer> lineList = new List<LineRenderer>();
+    
     
     private void Awake()
     {
@@ -36,6 +38,12 @@ public class MapGenerator : MonoBehaviour
         screenWidth = Camera.main.aspect * screenHeight;
         
         columnWidth = (screenWidth - border * 2) / mapConfig.roomBlueprints.Count;
+        
+        //初始化房间数据字典
+        foreach (var roomDataSO in roomDataSOList)
+        {
+            roomDataDic.Add(roomDataSO.roomType, roomDataSO);
+        }
     }
 
     private void Start()
@@ -80,30 +88,9 @@ public class MapGenerator : MonoBehaviour
                 roomList.Add(room);
                 currentRoomList.Add(room);
                 //随机选择房间类型
-                RoomType roomType = mapConfig.roomBlueprints[i].roomType;
-                //选择房间数据
-                RoomDataSO roomDataSO = roomDataSOList[0];
-                switch (roomType)
-                {
-                    case RoomType.MinorEnemy:
-                        roomDataSO = roomDataSOList[0];
-                        break;
-                    case RoomType.EliteEnemy:
-                        roomDataSO = roomDataSOList[1];
-                        break;
-                    case RoomType.Shop:
-                        roomDataSO = roomDataSOList[2];
-                        break;
-                    case RoomType.Treasure:
-                        roomDataSO = roomDataSOList[3];
-                        break;
-                    case RoomType.RestRoom:
-                        roomDataSO = roomDataSOList[4];
-                        break;
-                    case RoomType.Boss:
-                        roomDataSO = roomDataSOList[5];
-                        break;
-                }
+                RoomType flags = GetRandomRoomType(mapConfig.roomBlueprints[i].roomType);
+                //设置房间数据
+                RoomDataSO roomDataSO = GetRoomData(flags);
                 room.SetUpRoom(i, j, roomDataSO);
             }
             
@@ -179,5 +166,20 @@ public class MapGenerator : MonoBehaviour
         roomList.Clear();
         
         CreateMap();
+    }
+    
+    private RoomDataSO GetRoomData(RoomType roomType)
+    {
+        return roomDataDic[roomType];
+    }
+    
+    private RoomType GetRandomRoomType(RoomType flags)
+    {
+        //先进行切分
+        string[] options = flags.ToString().Split(',');
+        
+        string randomOption = options[Random.Range(0, options.Length)];
+        
+        return (RoomType)Enum.Parse(typeof(RoomType), randomOption);
     }
 }
