@@ -374,6 +374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapConfig: {fileID: 11400000, guid: 54660c5a75ac3034fb2a2714811a76f5, type: 2}
   roomPrefab: {fileID: 2617244118189403465, guid: 829374d72615c9c48a3d4b2a1ad4bea6, type: 3}
+  linePrefab: {fileID: 3034269893767786618, guid: 9905f07356a16f842bbad1ef91bbedb9, type: 3}
   border: 1
   roomDataSOList:
   - {fileID: 11400000, guid: 173af9d184cc01447b2b73c8e008d029, type: 2}
