@@ -16,6 +16,10 @@ public class Room : MonoBehaviour
     // 房间状态
     public RoomState roomState;
 
+    [Header("广播")] 
+    public ObjectEventSO loadRoomEventSO;
+    
+
     private void Awake()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -30,6 +34,7 @@ public class Room : MonoBehaviour
     {
         //处理点击事件
         Debug.Log($"点击了房间{roomDataSO.roomType}");
+        loadRoomEventSO.RaiseEvent(roomDataSO, this);
     }
     
     /// <summary>
