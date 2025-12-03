@@ -388,6 +388,7 @@ GameObject:
   - component: {fileID: 865918780}
   - component: {fileID: 865918779}
   - component: {fileID: 865918778}
+  - component: {fileID: 865918781}
   m_Layer: 0
   m_Name: BackToMap
   m_TagString: Untagged
@@ -508,6 +509,19 @@ Transform:
   - {fileID: 801446104}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &865918781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865918777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d211878505cab024e9c15279a50406d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadMapEventSO: {fileID: 11400000, guid: ddf77f16913083343b24251055c88ab8, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

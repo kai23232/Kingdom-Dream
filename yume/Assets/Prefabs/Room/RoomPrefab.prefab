@@ -169,4 +169,4 @@ MonoBehaviour:
   line: 0
   roomDataSO: {fileID: 11400000, guid: 9572e637851135349a88cf209ee710ca, type: 2}
   roomState: 0
-  loadRoomEvent: {fileID: 11400000, guid: dae9c18d8f6966e4da8be478a094ad73, type: 2}
+  loadRoomEventSO: {fileID: 11400000, guid: dae9c18d8f6966e4da8be478a094ad73, type: 2}

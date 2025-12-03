@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32e79e59bdfbe7c499cde7b2d0980691, type: 3}
-  m_Name: LoadRoomEvent
+  m_Name: LoadMapEvent
   m_EditorClassIdentifier: 
-  description: "\u8FD4\u56DE\u5730\u56FE\u573A\u666F\u52A0\u8F7D\u5730\u56FE"
-  lastSender: RoomPrefab(Clone) (Room)
+  description: 
+  lastSender: 

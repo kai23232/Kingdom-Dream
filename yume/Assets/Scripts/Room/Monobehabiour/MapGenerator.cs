@@ -84,7 +84,7 @@ public class MapGenerator : MonoBehaviour
                 }
                 
                 //实例化房间
-                Room room = Instantiate(roomPrefab, newPoint, Quaternion.identity);
+                Room room = Instantiate(roomPrefab, newPoint, Quaternion.identity,transform);
                 roomList.Add(room);
                 currentRoomList.Add(room);
                 //随机选择房间类型

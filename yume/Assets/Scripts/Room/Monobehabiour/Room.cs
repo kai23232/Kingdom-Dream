@@ -33,7 +33,7 @@ public class Room : MonoBehaviour
     private void OnMouseDown()
     {
         //处理点击事件
-        Debug.Log($"点击了房间{roomDataSO.roomType}");
+        //Debug.Log($"点击了房间{roomDataSO.roomType}");
         loadRoomEventSO.RaiseEvent(roomDataSO, this);
     }
     
