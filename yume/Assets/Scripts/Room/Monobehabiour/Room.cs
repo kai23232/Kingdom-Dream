@@ -15,6 +15,8 @@ public class Room : MonoBehaviour
     public RoomDataSO roomDataSO;
     // 房间状态
     public RoomState roomState;
+    //连接的房间列表
+    public List<Vector2Int> LinkToList = new List<Vector2Int>();
 
     [Header("广播")] 
     public ObjectEventSO loadRoomEventSO;
@@ -25,16 +27,19 @@ public class Room : MonoBehaviour
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
-    private void Start()
-    {
-        SetUpRoom(0,0, roomDataSO);
-    }
-
     private void OnMouseDown()
     {
         //处理点击事件
         //Debug.Log($"点击了房间{roomDataSO.roomType}");
-        loadRoomEventSO.RaiseEvent(roomDataSO, this);
+        //检查房间状态
+        if(roomState == RoomState.Attainable)
+        {
+            loadRoomEventSO.RaiseEvent(this, this);
+        }
+        else if(roomState == RoomState.Locked)
+        {
+            Debug.Log($"房间{roomDataSO.roomType}已被锁定");
+        }
     }
     
     /// <summary>
@@ -50,5 +55,12 @@ public class Room : MonoBehaviour
         this.roomDataSO = roomDataSO;
         
         spriteRenderer.sprite = roomDataSO.roomIcon;
+        
+        spriteRenderer.color = roomState switch
+        {
+            RoomState.Attainable => Color.white,
+            RoomState.Locked => Color.gray,
+            RoomState.Visited => Color.green,
+        };
     }
 }

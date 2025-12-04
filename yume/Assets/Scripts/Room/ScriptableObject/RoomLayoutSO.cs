@@ -16,6 +16,7 @@ public class MapRoomData
     public int column, row;
     public RoomDataSO roomData;
     public RoomState roomState;
+    public List<Vector2Int> LinkToList;
 }
 
 [Serializable]

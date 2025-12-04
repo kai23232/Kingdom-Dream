@@ -104,6 +104,17 @@ public class MapGenerator : MonoBehaviour
                 currentRoomList.Add(room);
                 //随机选择房间类型
                 RoomType flags = GetRandomRoomType(mapConfig.roomBlueprints[i].roomType);
+                
+                //设置只有第一列房间可以进入
+                if(i == 0)
+                {
+                    room.roomState = RoomState.Attainable;
+                }
+                else
+                {
+                    room.roomState = RoomState.Locked;
+                }
+                
                 //设置房间数据
                 RoomDataSO roomDataSO = GetRoomData(flags);
                 room.SetUpRoom(i, j, roomDataSO);
@@ -151,6 +162,8 @@ public class MapGenerator : MonoBehaviour
         line.SetPosition(0, targetRoom.transform.position);
         lineList.Add(line);
         
+        targetRoom.LinkToList.Add(new Vector2Int(startRoom.column, startRoom.line));
+        
         return targetRoom;
     }
 
@@ -163,6 +176,8 @@ public class MapGenerator : MonoBehaviour
         line.SetPosition(0, startRoom.transform.position);
         line.SetPosition(1, targetRoom.transform.position);
         lineList.Add(line);
+        
+        startRoom.LinkToList.Add(new Vector2Int(targetRoom.column, targetRoom.line));
         
         return targetRoom;
     }
@@ -206,13 +221,17 @@ public class MapGenerator : MonoBehaviour
         mapLayout.mapRoomDataList = new List<MapRoomData>();
         foreach (var room in roomList)
         {
-            MapRoomData mapRoomData = new MapRoomData();
-            mapRoomData.posX = room.transform.position.x;
-            mapRoomData.posY = room.transform.position.y;
-            mapRoomData.column = room.column;
-            mapRoomData.row = room.line;
-            mapRoomData.roomData = room.roomDataSO;
-            mapRoomData.roomState = room.roomState;
+            MapRoomData mapRoomData = new MapRoomData()
+            {
+                posX = room.transform.position.x,
+                posY = room.transform.position.y,
+                column = room.column,
+                row = room.line,
+                roomData = room.roomDataSO,
+                roomState = room.roomState,
+                LinkToList = room.LinkToList
+            };
+            
             mapLayout.mapRoomDataList.Add(mapRoomData);
         }
         
@@ -220,9 +239,12 @@ public class MapGenerator : MonoBehaviour
         mapLayout.linePosList = new List<linePos>();
         foreach (var line in lineList)
         {
-            linePos linePos = new linePos();
-            linePos.startPos = new SerializeVector3(line.GetPosition(0));
-            linePos.endPos = new SerializeVector3(line.GetPosition(1));
+            linePos linePos = new linePos()
+            {
+                startPos = new SerializeVector3(line.GetPosition(0)),
+                endPos = new SerializeVector3(line.GetPosition(1))
+            };
+            
             mapLayout.linePosList.Add(linePos);
         }
         
@@ -235,10 +257,13 @@ public class MapGenerator : MonoBehaviour
         {
             //实例化房间
             Room room = Instantiate(roomPrefab, new Vector3(mapRoomData.posX, mapRoomData.posY, 0), Quaternion.identity,transform);
-            //设置房间数据
-            room.SetUpRoom(mapRoomData.column, mapRoomData.row, mapRoomData.roomData);
             //设置房间状态
             room.roomState = mapRoomData.roomState;
+            //设置连接房间列表
+            room.LinkToList = mapRoomData.LinkToList;
+            //设置房间数据
+            room.SetUpRoom(mapRoomData.column, mapRoomData.row, mapRoomData.roomData);
+           
             
             roomList.Add(room);
         }
