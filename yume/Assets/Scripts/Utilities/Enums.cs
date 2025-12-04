@@ -28,3 +28,10 @@ public enum RoomState
     // 可到达（房间已解锁，玩家可移动至该房间）
     Attainable,
 }
+
+public enum CardTypte
+{
+    Attack,
+    Defense,
+    Abilities
+}

@@ -61,6 +61,7 @@ public class Room : MonoBehaviour
             RoomState.Attainable => Color.white,
             RoomState.Locked => Color.gray,
             RoomState.Visited => Color.green,
+            _ => Color.white,
         };
     }
 }
