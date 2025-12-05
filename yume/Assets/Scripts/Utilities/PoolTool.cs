@@ -1,9 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
+[DefaultExecutionOrder(-100)]
 public class PoolTool : MonoBehaviour
 {
     public GameObject objPrefab;
