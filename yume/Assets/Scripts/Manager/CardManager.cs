@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Rendering.VirtualTexturing;
@@ -8,13 +9,24 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class CardManager : MonoBehaviour
 {
-    public PoolTool PoolTool;
+    public PoolTool poolTool;
     public List<CardDataSO> cardDataList; //游戏中所有可能出现的卡牌
 
+    [Header("卡牌库")]
+    public CardLibrarySO newGameCardLibrary;
+    public CardLibrarySO currentCardLibrary;
+    
     private void Awake()
     {
         InitializeCardDataList();
+
+        foreach (var entry in newGameCardLibrary.cardLibraryList)
+        {
+            currentCardLibrary.cardLibraryList.Add(entry);
+        }
     }
+
+    #region 获得项目中的卡牌
 
     private void InitializeCardDataList()
     {
@@ -32,4 +44,16 @@ public class CardManager : MonoBehaviour
             Debug.LogError("加载卡牌数据失败");
         }
     }
+
+    #endregion
+
+    public GameObject GetCardObject()
+    {
+        return poolTool.GetObjectFromPool();
+    }
+    
+    public void DiscardCard(GameObject card)
+    {
+        poolTool.ReleaseObjectToPool(card);
+    }   
 }
