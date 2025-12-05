@@ -522,8 +522,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6fc5cbb5586f5f4a986519634da87df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardManager: {fileID: 473288347}
+  cardManager: {fileID: 473288347}
   cardLayoutManager: {fileID: 230888885}
+  DeckPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &754389394
 Transform:
   m_ObjectHideFlags: 0
@@ -531,6 +532,37 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 754389392}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1099904563
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1099904564}
+  m_Layer: 0
+  m_Name: //CARD
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1099904564
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099904563}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -755,7 +787,8 @@ SceneRoots:
   - {fileID: 1892656736}
   - {fileID: 1695756191}
   - {fileID: 544793307}
-  - {fileID: 748024982}
   - {fileID: 473288348}
-  - {fileID: 754389394}
   - {fileID: 230888886}
+  - {fileID: 1099904564}
+  - {fileID: 748024982}
+  - {fileID: 754389394}

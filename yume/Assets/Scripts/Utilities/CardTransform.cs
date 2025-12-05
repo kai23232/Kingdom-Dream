@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CardTransform
 {
-    public SerializeVector3 pos;
+    public Vector3 pos;
     public Quaternion rotation;
     
     public CardTransform(Vector3 pos, Quaternion rotation)
     {
-        this.pos = new SerializeVector3(pos);
+        this.pos = pos;
         this.rotation = rotation;
     }
 }

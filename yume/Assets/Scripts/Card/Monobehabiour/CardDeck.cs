@@ -1,15 +1,18 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Rendering;
+
 
 public class CardDeck : MonoBehaviour
 {
-    public CardManager CardManager;
+    public CardManager cardManager;
     public CardLayoutManager cardLayoutManager;
     private List<CardDataSO> drawDeck = new List<CardDataSO>(); //抽牌库
     private List<CardDataSO> discardDeck = new List<CardDataSO>(); //弃牌库
     private List<Card> handCardObjectList = new List<Card>(); //当前手牌（每回合）
+    
+    public Vector3 DeckPosition;
 
     //TODO:测试用
     private void Start()
@@ -23,7 +26,7 @@ public class CardDeck : MonoBehaviour
     {
         drawDeck.Clear();
 
-        foreach (var cardEntry in CardManager.currentCardLibrary.cardLibraryList)
+        foreach (var cardEntry in cardManager.currentCardLibrary.cardLibraryList)
         {
             for(int i = 0;i < cardEntry.amount;i++)
             {
@@ -52,15 +55,20 @@ public class CardDeck : MonoBehaviour
             CardDataSO cardData = drawDeck[0];
             drawDeck.RemoveAt(0);
 
-            var card = CardManager.GetCardObject().GetComponent<Card>();
+            var card = cardManager.GetCardObject().GetComponent<Card>();
             //初始化
             card.Init(cardData);
+            //设置卡牌位置
+            card.transform.position = DeckPosition;
+            
             handCardObjectList.Add(card);
+            
+            float delay = i * 0.2f;
+            SetCardLayout(delay);
         }
-        SetCardLayout();
     }
 
-    private void SetCardLayout()
+    private void SetCardLayout(float delay)
     {
         for (int i = 0; i < handCardObjectList.Count; i++)
         {
@@ -68,7 +76,15 @@ public class CardDeck : MonoBehaviour
             
             CardTransform cardTransform = cardLayoutManager.GetCardTransform(i, handCardObjectList.Count);
             
-            currentCard.transform.SetPositionAndRotation(cardTransform.pos.ToVector3(), cardTransform.rotation);
+            //currentCard.transform.SetPositionAndRotation(cardTransform.pos.ToVector3(), cardTransform.rotation);
+            
+            currentCard.transform.DOScale(Vector3.one, 0.2f).SetDelay(delay).OnComplete(() =>
+            {
+                currentCard.transform.DOMove(cardTransform.pos, 0.5f);
+            });
+            
+            //设置卡牌排序
+            currentCard.GetComponent<SortingGroup>().sortingOrder = i;
         }
     }
 }
