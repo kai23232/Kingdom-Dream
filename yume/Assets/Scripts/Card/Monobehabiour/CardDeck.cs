@@ -81,6 +81,7 @@ public class CardDeck : MonoBehaviour
             currentCard.transform.DOScale(Vector3.one, 0.2f).SetDelay(delay).OnComplete(() =>
             {
                 currentCard.transform.DOMove(cardTransform.pos, 0.5f);
+                currentCard.transform.DORotate(cardTransform.rotation.eulerAngles, 0.5f);
             });
             
             //设置卡牌排序

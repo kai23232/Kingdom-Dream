@@ -151,9 +151,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 177cf32944099534fb7c9a4500d5c0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isHorizontal: 1
+  isHorizontal: 0
   maxWidth: 7
   cardSpacing: 2
+  maxAngle: 40
+  angleBetweenCards: 7
+  radius: 17
   centerPoint: {x: 0, y: -4.5, z: 0}
   cardPositions: []
   cardRotations: []
