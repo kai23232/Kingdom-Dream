@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Card
+  m_EditorClassIdentifier: 
+  m_GroupName: Card
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 24a5379943b25934490b93cb888d4291
+  m_SerializeEntries:
+  - m_GUID: 004e0c85d84207340b23e0fb3548b182
+    m_Address: "Assets/GameData/CardData/\u6BD2\u836F.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CardData
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1f3237f2d2464914c8e853af9c8f5950
+    m_Address: "Assets/GameData/CardData/\u82F9\u679C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CardData
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4397c8065e564c642a212c0e33af0549
+    m_Address: "Assets/GameData/CardData/\u706B\u7403\u672F.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CardData
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4b7d8433e0b538c46bebd4c818bcc8a3
+    m_Address: "Assets/GameData/CardData/\u5F11\u541B\u7A81\u523A.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CardData
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4c8ed9b66ea22c643baf5b0d37392988
+    m_Address: "Assets/GameData/CardData/\u65E0\u5B57\u5929\u4E66.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CardData
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 554155ba62954324792698cc39eb2f2d
+    m_Address: "Assets/GameData/CardData/\u65E0\u6687\u4E4B\u5251.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CardData
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 598ff899478292e49b398cd367a07152
+    m_Address: "Assets/GameData/CardData/\u539F\u59CB\u8170\u5E26.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CardData
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 704293994bc36d549a016072f0e1e665
+    m_Address: "Assets/GameData/CardData/\u7BAD\u77E2.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CardData
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 71face2f7dd4f2b4cb21c6be53565b7b
+    m_Address: "Assets/GameData/CardData/\u51B0\u9525\u672F.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CardData
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 815a9b91c4d235742981850d28440fac
+    m_Address: "Assets/GameData/CardData/\u94A2\u5316\u80CC\u5FC3.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CardData
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8d6da0dd34eb1284e87d2e647e417ca3
+    m_Address: "Assets/GameData/CardData/\u96F7\u9706\u79D8\u672F.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CardData
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c04812d44a948354bb093d497bca6345
+    m_Address: "Assets/GameData/CardData/\u5343\u9524\u767E\u70BC.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CardData
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cd38bb7e68d312b4693b508cfceae03f
+    m_Address: "Assets/GameData/CardData/\u65A7\u5288.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CardData
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e30ca9cc9c00c9b43ba499b956cd6adf
+    m_Address: "\u76FE\u724C"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CardData
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 34dfec968da0be24588e3add1895fa56, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: f9173e776d8925645afaaf118a374090, type: 2}
+    - {fileID: 11400000, guid: 9ec696cabe266c14c8b7b0feb72d73b4, type: 2}
