@@ -77,15 +77,18 @@ public class CardDeck : MonoBehaviour
             CardTransform cardTransform = cardLayoutManager.GetCardTransform(i, handCardObjectList.Count);
             
             //currentCard.transform.SetPositionAndRotation(cardTransform.pos.ToVector3(), cardTransform.rotation);
-            
+            currentCard.isAnimating = true;
             currentCard.transform.DOScale(Vector3.one, 0.2f).SetDelay(delay).OnComplete(() =>
             {
                 currentCard.transform.DOMove(cardTransform.pos, 0.5f);
                 currentCard.transform.DORotate(cardTransform.rotation.eulerAngles, 0.5f);
             });
+            currentCard.isAnimating = false;
             
             //设置卡牌排序
             currentCard.GetComponent<SortingGroup>().sortingOrder = i;
+            //更新原始数据
+            currentCard.UpdatePositionAndRotation(cardTransform.pos, cardTransform.rotation);
         }
     }
 }
