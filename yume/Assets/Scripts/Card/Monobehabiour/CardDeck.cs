@@ -123,8 +123,9 @@ public class CardDeck : MonoBehaviour
     /// 弃牌
     /// </summary>
     /// <param name="card"></param>
-    public void DiscardCard(Card card)
+    public void DiscardCard(object data)
     {
+        Card card = data as Card;
         discardDeck.Add(card.CardData);
         handCardObjectList.Remove(card);
         cardManager.DiscardCard(card.gameObject);

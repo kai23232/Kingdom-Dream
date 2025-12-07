@@ -35,3 +35,10 @@ public enum CardTypte
     Defense,
     Abilities
 }
+
+public enum EffectTargetType
+{
+    Selt,
+    Target,
+    All
+}
