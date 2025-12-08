@@ -1,0 +1,3 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:ProgressBar value="36.3" title="40/60" name="HealthBar" style="position: absolute; width: 325px; left: -150px; top: -20px; right: auto; bottom: auto;" />
+</ui:UXML>
