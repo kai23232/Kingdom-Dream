@@ -6,16 +6,16 @@ using UnityEngine.UIElements;
 
 public class HealthBarController : MonoBehaviour
 {
+    private CharacterBase currentCharacter;
     [Header("Element")]
     public Transform HealthBarTransform;
     private UIDocument HealthBarDocument;
-    private ProgressBar headlthBar;
+    private ProgressBar healthBar;
 
     private void Awake()
     {
-        HealthBarDocument = GetComponent<UIDocument>();
-        headlthBar = HealthBarDocument.rootVisualElement.Q<ProgressBar>("HealthBar");
-        MoveToWorldPosition(headlthBar, HealthBarTransform.position, Vector2.zero);
+        currentCharacter = GetComponent<CharacterBase>();
+        InitHealthBar();
     }
 
     private void MoveToWorldPosition(VisualElement element, Vector3 worldPosition,Vector2 size)
@@ -23,5 +23,32 @@ public class HealthBarController : MonoBehaviour
         Rect rect = RuntimePanelUtils.CameraTransformWorldToPanelRect(element.panel, worldPosition, size,Camera.main);
         element.transform.position = rect.position;
     }
-    
+
+    private void InitHealthBar()
+    {
+        HealthBarDocument = GetComponent<UIDocument>();
+        healthBar = HealthBarDocument.rootVisualElement.Q<ProgressBar>("HealthBar");
+        MoveToWorldPosition(healthBar, HealthBarTransform.position, Vector2.zero);
+    }
+
+    private void Update()
+    {
+        UpdateHealthBar();
+    }
+
+    public void UpdateHealthBar()
+    {
+        if (currentCharacter.isDead)
+        {
+            healthBar.style.display = DisplayStyle.None;
+            return;
+        }
+
+        if (healthBar != null)
+        {
+            healthBar.title = currentCharacter.CurrentHp + "/" + currentCharacter.MaxHp;
+            healthBar.highValue = currentCharacter.MaxHp;
+            healthBar.value = currentCharacter.CurrentHp;
+        }
+    }
 }
