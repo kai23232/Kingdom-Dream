@@ -59,7 +59,15 @@ public class TurnBaseManager : MonoBehaviour
         playerTurnBeginEvent.RaiseEvent(null,this);
     }
     
-    public void EnemyTurnBegin()
+    private void EnemyTurnBegin()
+    {
+        enemyTurnBeginEvent.RaiseEvent(null,this);
+    }
+    
+    /// <summary>
+    /// 监听事件函数
+    /// </summary>
+    public void EnemyTurnBeginListen()
     {
         timeCounter = 0f;
         isEnemyTurn = true;

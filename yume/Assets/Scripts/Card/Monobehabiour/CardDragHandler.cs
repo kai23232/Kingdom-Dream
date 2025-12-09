@@ -24,14 +24,20 @@ public class CardDragHandler : MonoBehaviour,IBeginDragHandler, IDragHandler, IE
     {
         canMove = false;
         canExecute = false;
+        if (currentArrow != null)
+        {
+            Destroy(currentArrow);
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (!currentCard.isAvailable)
+            return;
         switch (currentCard.CardData.cardType)
         {
             case CardTypte.Attack:
-                currentArrow = Instantiate(arrowPrefab, transform.position, Quaternion.identity);
+                currentArrow = Instantiate(arrowPrefab, transform);
                 break;
             case CardTypte.Abilities:
             case CardTypte.Defense:
@@ -42,6 +48,8 @@ public class CardDragHandler : MonoBehaviour,IBeginDragHandler, IDragHandler, IE
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (!currentCard.isAvailable)
+            return;
         if (canMove)
         {
             currentCard.isAnimating = true;
@@ -68,6 +76,8 @@ public class CardDragHandler : MonoBehaviour,IBeginDragHandler, IDragHandler, IE
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (!currentCard.isAvailable)
+            return;
         if (currentArrow != null)
         {
             Destroy(currentArrow);
@@ -83,4 +93,5 @@ public class CardDragHandler : MonoBehaviour,IBeginDragHandler, IDragHandler, IE
             currentCard.ResetTransform();
         }
     }
+    
 }

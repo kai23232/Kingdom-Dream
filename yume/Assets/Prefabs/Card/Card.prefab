@@ -1092,6 +1092,7 @@ MonoBehaviour:
   isAnimating: 0
   player: {fileID: 0}
   discardCardEvent: {fileID: 11400000, guid: 2736a3ec078432f4d80160990de0df87, type: 2}
+  costEvent: {fileID: 11400000, guid: c881ab4524a9a854d853cd438947d56a, type: 2}
 --- !u!114 &240709692475442143
 MonoBehaviour:
   m_ObjectHideFlags: 0

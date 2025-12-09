@@ -13,6 +13,8 @@ public class CardDeck : MonoBehaviour
     private List<CardDataSO> discardDeck = new List<CardDataSO>(); //弃牌库
     private List<Card> handCardObjectList = new List<Card>(); //当前手牌（每回合）
     
+    public Player player;
+    
     public Vector3 DeckPosition;
     
     [Header("广播")]
@@ -48,6 +50,7 @@ public class CardDeck : MonoBehaviour
     
     public void NewTurnDrawCards(object data)
     {
+        player.NewTurn();
         DrawCard(3);
     }
     
@@ -96,6 +99,10 @@ public class CardDeck : MonoBehaviour
             CardTransform cardTransform = cardLayoutManager.GetCardTransform(i, handCardObjectList.Count);
             
             //currentCard.transform.SetPositionAndRotation(cardTransform.pos.ToVector3(), cardTransform.rotation);
+            
+            //判断卡牌能量
+            currentCard.UpdateState();
+            
             currentCard.isAnimating = true;
             currentCard.transform.DOScale(Vector3.one, 0.2f).SetDelay(delay).OnComplete(() =>
             {

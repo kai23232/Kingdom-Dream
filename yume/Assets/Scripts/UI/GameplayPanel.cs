@@ -23,10 +23,14 @@ public class GameplayPanel : MonoBehaviour
         discardAmountLabel.text = "0";
         energyAmountLabel.text = "0";
         turnLabel.text = "玩家回合";
+        turnLabel.style.color = Color.green;
 
         endTurnButton.clicked += OnEndTurnButtonClick;
     }
-    
+    public void UpDateEnergyAmount(int amount)
+    {
+        energyAmountLabel.text = amount.ToString();
+    }
     public void UpdateDrawAmount(int amount)
     {
         drawAmountLabel.text = amount.ToString();
@@ -40,5 +44,19 @@ public class GameplayPanel : MonoBehaviour
     private void OnEndTurnButtonClick()
     {
         enemyTurnBeginEvent.RaiseEvent(null,this);
+    }
+
+    public void OnEnemyTurnBegin()
+    {
+        endTurnButton.SetEnabled(false);
+        turnLabel.text = "敌人回合";
+        turnLabel.style.color = Color.red;
+    }
+    
+    public void OnPlayerTurnBegin()
+    {
+        endTurnButton.SetEnabled(true);
+        turnLabel.text = "玩家回合";
+        turnLabel.style.color = Color.green;
     }
 }
