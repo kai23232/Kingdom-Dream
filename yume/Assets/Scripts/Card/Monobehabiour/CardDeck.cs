@@ -14,6 +14,11 @@ public class CardDeck : MonoBehaviour
     private List<Card> handCardObjectList = new List<Card>(); //当前手牌（每回合）
     
     public Vector3 DeckPosition;
+    
+    [Header("广播")]
+    public IntEventSO drawAmountEvent;
+    public IntEventSO discardAmountEvent;
+    
 
     //TODO:测试用
     private void Start()
@@ -60,6 +65,9 @@ public class CardDeck : MonoBehaviour
             CardDataSO cardData = drawDeck[0];
             drawDeck.RemoveAt(0);
 
+            //更新UI显示数量
+            drawAmountEvent.RaiseEvent(drawDeck.Count,this);
+            
             var card = cardManager.GetCardObject().GetComponent<Card>();
             //初始化
             card.Init(cardData);
@@ -108,8 +116,10 @@ public class CardDeck : MonoBehaviour
     private void ShuffleDeck()
     {
         discardDeck.Clear();
-        //TODO:更新UI显示数量
-
+        
+        drawAmountEvent.RaiseEvent(drawDeck.Count,this);
+        discardAmountEvent.RaiseEvent(discardDeck.Count,this);
+        
         for (int i = 0; i < drawDeck.Count; i++)
         {
             CardDataSO temp = drawDeck[i];
@@ -129,6 +139,9 @@ public class CardDeck : MonoBehaviour
         discardDeck.Add(card.CardData);
         handCardObjectList.Remove(card);
         cardManager.DiscardCard(card.gameObject);
+        
+        //更新UI显示数量
+        discardAmountEvent.RaiseEvent(discardDeck.Count,this);
         
         SetCardLayout(0f);
     }

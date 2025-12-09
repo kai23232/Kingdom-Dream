@@ -840,6 +840,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1301731963}
   - component: {fileID: 1301731962}
+  - component: {fileID: 1301731964}
+  - component: {fileID: 1301731966}
+  - component: {fileID: 1301731965}
   m_Layer: 0
   m_Name: GamePlay Panel
   m_TagString: Untagged
@@ -878,6 +881,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1301731964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301731961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b1e9241d767c7740b32f3fee765728d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1301731965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301731961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b75e84f04c08f344b317b50dfaccaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSO: {fileID: 11400000, guid: efeca4d7af54b4c4591f49cfa5283f55, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1301731966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301731961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b75e84f04c08f344b317b50dfaccaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSO: {fileID: 11400000, guid: 5f634a149af36864298d8c8d688103ec, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1695756190
 GameObject:
   m_ObjectHideFlags: 0
