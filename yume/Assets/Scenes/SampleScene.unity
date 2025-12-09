@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 230888886}
   - component: {fileID: 230888885}
   m_Layer: 0
-  m_Name: CardLayoutManager
+  m_Name: CardLayout Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 473288348}
   - component: {fileID: 473288347}
   m_Layer: 0
-  m_Name: CardManager
+  m_Name: Card Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -536,7 +536,7 @@ GameObject:
   - component: {fileID: 544793306}
   - component: {fileID: 544793305}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: Game Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -654,6 +654,7 @@ GameObject:
   - component: {fileID: 754389394}
   - component: {fileID: 754389393}
   - component: {fileID: 754389395}
+  - component: {fileID: 754389396}
   m_Layer: 0
   m_Name: CaedDeck
   m_TagString: Untagged
@@ -676,6 +677,8 @@ MonoBehaviour:
   cardManager: {fileID: 473288347}
   cardLayoutManager: {fileID: 230888885}
   DeckPosition: {x: 0, y: 0, z: 0}
+  drawAmountEvent: {fileID: 11400000, guid: 5f634a149af36864298d8c8d688103ec, type: 2}
+  discardAmountEvent: {fileID: 11400000, guid: efeca4d7af54b4c4591f49cfa5283f55, type: 2}
 --- !u!4 &754389394
 Transform:
   m_ObjectHideFlags: 0
@@ -711,6 +714,112 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: CardDeck, Assembly-CSharp
         m_MethodName: DiscardCard
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &754389396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754389392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817de32bd4d667143ac7fc3a6b59c85e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSO: {fileID: 11400000, guid: b720aa942b3111542b555b410faf8370, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 754389393}
+        m_TargetAssemblyTypeName: CardDeck, Assembly-CSharp
+        m_MethodName: NewTurnDrawCards
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &802693098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 802693099}
+  - component: {fileID: 802693100}
+  - component: {fileID: 802693101}
+  m_Layer: 0
+  m_Name: TurnBase Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &802693099
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802693098}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &802693100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802693098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80db0a8dde4c0ff4b96437624160aab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battleEnd: 0
+  energyTurnDuration: 3
+  playerTurnDuration: 3
+  playerTurnBeginEvent: {fileID: 11400000, guid: b720aa942b3111542b555b410faf8370, type: 2}
+  enemyTurnBeginEvent: {fileID: 11400000, guid: 80ff0818c65c8264baebf9b6d2f7fd27, type: 2}
+--- !u!114 &802693101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802693098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817de32bd4d667143ac7fc3a6b59c85e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSO: {fileID: 11400000, guid: 80ff0818c65c8264baebf9b6d2f7fd27, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 802693100}
+        m_TargetAssemblyTypeName: TurnBaseManager, Assembly-CSharp
+        m_MethodName: EnemyTurnBegin
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -893,6 +1002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b1e9241d767c7740b32f3fee765728d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyTurnBeginEvent: {fileID: 11400000, guid: 80ff0818c65c8264baebf9b6d2f7fd27, type: 2}
 --- !u!114 &1301731965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -908,7 +1018,19 @@ MonoBehaviour:
   eventSO: {fileID: 11400000, guid: efeca4d7af54b4c4591f49cfa5283f55, type: 2}
   response:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1301731964}
+        m_TargetAssemblyTypeName: GameplayPanel, Assembly-CSharp
+        m_MethodName: UpdateDiscardAmount
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1301731966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -924,7 +1046,19 @@ MonoBehaviour:
   eventSO: {fileID: 11400000, guid: 5f634a149af36864298d8c8d688103ec, type: 2}
   response:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1301731964}
+        m_TargetAssemblyTypeName: GameplayPanel, Assembly-CSharp
+        m_MethodName: UpdateDrawAmount
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1695756190
 GameObject:
   m_ObjectHideFlags: 0
@@ -938,7 +1072,7 @@ GameObject:
   - component: {fileID: 1695756192}
   - component: {fileID: 1695756194}
   m_Layer: 0
-  m_Name: SceneLoadManager
+  m_Name: SceneLoad Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1205,6 +1339,7 @@ SceneRoots:
   - {fileID: 544793307}
   - {fileID: 473288348}
   - {fileID: 230888886}
+  - {fileID: 802693099}
   - {fileID: 1099904564}
   - {fileID: 748024982}
   - {fileID: 754389394}

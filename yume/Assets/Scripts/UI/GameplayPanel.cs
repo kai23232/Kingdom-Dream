@@ -6,7 +6,9 @@ public class GameplayPanel : MonoBehaviour
     private VisualElement rootElement;
     private Label energyAmountLabel,drawAmountLabel,discardAmountLabel,turnLabel;
     private Button endTurnButton;
-
+    
+    [Header("广播")]
+    public ObjectEventSO enemyTurnBeginEvent;
     private void OnEnable()
     {
         rootElement = GetComponent<UIDocument>().rootVisualElement;
@@ -21,6 +23,8 @@ public class GameplayPanel : MonoBehaviour
         discardAmountLabel.text = "0";
         energyAmountLabel.text = "0";
         turnLabel.text = "玩家回合";
+
+        endTurnButton.clicked += OnEndTurnButtonClick;
     }
     
     public void UpdateDrawAmount(int amount)
@@ -31,5 +35,10 @@ public class GameplayPanel : MonoBehaviour
     public void UpdateDiscardAmount(int amount)
     {
         discardAmountLabel.text = amount.ToString();
+    }
+    
+    private void OnEndTurnButtonClick()
+    {
+        enemyTurnBeginEvent.RaiseEvent(null,this);
     }
 }

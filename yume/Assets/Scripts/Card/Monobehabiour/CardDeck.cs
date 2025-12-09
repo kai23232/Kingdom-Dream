@@ -19,13 +19,10 @@ public class CardDeck : MonoBehaviour
     public IntEventSO drawAmountEvent;
     public IntEventSO discardAmountEvent;
     
-
-    //TODO:测试用
+    
     private void Start()
     {
         InitializeDeck();
-        
-        DrawCard(3);
     }
 
     public void InitializeDeck()
@@ -47,6 +44,11 @@ public class CardDeck : MonoBehaviour
     public void TestDrawCard()
     {
         DrawCard(1);
+    }
+    
+    public void NewTurnDrawCards(object data)
+    {
+        DrawCard(3);
     }
     
     private void DrawCard(int amount)
@@ -144,5 +146,13 @@ public class CardDeck : MonoBehaviour
         discardAmountEvent.RaiseEvent(discardDeck.Count,this);
         
         SetCardLayout(0f);
+    }
+
+    public void OnPlayerTurnEnd()
+    {
+        for(int i = handCardObjectList.Count - 1;i >= 0;i--)
+        {
+            DiscardCard(handCardObjectList[i]);
+        }
     }
 }
