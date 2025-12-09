@@ -1,3 +1,4 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:ProgressBar value="36.3" title="40/60" name="HealthBar" style="position: absolute; width: 325px; left: -150px; top: -20px; right: auto; bottom: auto;" />
+    <Style src="project://database/Assets/UI/USS/HealthBarUSS.uss?fileID=7433441132597879392&amp;guid=8c80b2207e8d46844ba48bd5f62bdea2&amp;type=3#HealthBarUSS" />
+    <ui:ProgressBar value="38.4" title="40/60" name="HealthBar" style="position: absolute; width: 325px; left: -150px; top: -20px; right: auto; bottom: auto; font-size: 30px; color: rgb(255, 255, 255); -unity-font: url(&quot;project://database/Assets/Font/STXINGKA.TTF?fileID=12800000&amp;guid=b627c482275c99a4e852d0e29b5c4216&amp;type=3#STXINGKA&quot;); -unity-font-style: bold-and-italic; height: auto; scale: 1 1.3;" />
 </ui:UXML>
