@@ -940,6 +940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 60
   hp: {fileID: 11400000, guid: 791e1987893fa0d4287083e3ea66d478, type: 2}
+  defanse: {fileID: 11400000, guid: acf4df8ba52de714b9d36ef0616c9b8a, type: 2}
   isDead: 0
   playerMana: {fileID: 11400000, guid: c7691447b8ffdbc4c88de9829b5cc66a, type: 2}
   maxMana: 1

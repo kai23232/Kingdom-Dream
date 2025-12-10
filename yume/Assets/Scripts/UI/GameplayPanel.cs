@@ -7,6 +7,7 @@ public class GameplayPanel : MonoBehaviour
     private Label energyAmountLabel,drawAmountLabel,discardAmountLabel,turnLabel;
     private Button endTurnButton;
     
+    
     [Header("广播")]
     public ObjectEventSO enemyTurnBeginEvent;
     private void OnEnable()
