@@ -16,4 +16,6 @@ MonoBehaviour:
   cardIcon: {fileID: 21300000, guid: 8e1f416c7d68f5f4494ad45eee82af26, type: 3}
   cost: 1
   cardType: 2
-  description: "\u56DE\u590D<color=\"green\">2</color>\u70B9\u8840\u91CF"
+  description: "\u56DE\u590D<color=\"green\">3</color>\u70B9\u8840\u91CF"
+  effects:
+  - {fileID: 11400000, guid: 8929a68ba3ff2f24fbe838b318672abb, type: 2}

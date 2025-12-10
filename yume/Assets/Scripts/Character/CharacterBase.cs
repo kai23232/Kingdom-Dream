@@ -5,15 +5,19 @@ using UnityEngine;
 
 public class CharacterBase : MonoBehaviour
 {
+    protected Animator animator;
+
+    public bool isDead;
+    [Header("基础属性")]
     public int maxHp;
     public IntVariable hp;
     public IntVariable defanse;
     public int CurrentHp{get => hp.currentValue; set => hp.SetValue(value);}
     public int MaxHp{get => hp.maxValue;}
 
-    protected Animator animator;
-
-    public bool isDead;
+    [Header("Buff")] 
+    public GameObject buff;
+    public GameObject debuff;
     
     protected virtual void Awake()
     {
@@ -51,5 +55,15 @@ public class CharacterBase : MonoBehaviour
     public void ResetDefanse()
     {
         this.defanse.SetValue(0);
+    }
+    
+    public void HpHeal(int amount)
+    {
+        buff.SetActive(true);
+        hp.currentValue += amount;
+        if (CurrentHp > MaxHp)
+        {
+            CurrentHp = MaxHp;
+        }
     }
 }
