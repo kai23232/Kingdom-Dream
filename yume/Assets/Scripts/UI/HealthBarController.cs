@@ -1,12 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class HealthBarController : MonoBehaviour
 {
     private CharacterBase currentCharacter;
+
     [Header("Element")]
     public Transform HealthBarTransform;
     private UIDocument HealthBarDocument;
@@ -21,9 +23,15 @@ public class HealthBarController : MonoBehaviour
     [Header("Buff Sprite")]
     public Sprite buffSprite;
     public Sprite debuffSprite;
+    
+    //敌人意图相关
+    private Enemy enemy;
+    private VisualElement intentElement;
+    private Label intentAmountLable;
 
     private void Awake()
     {
+        enemy = GetComponent<Enemy>();
         currentCharacter = GetComponent<CharacterBase>();
         InitHealthBar();
     }
@@ -45,9 +53,13 @@ public class HealthBarController : MonoBehaviour
         
         buffElement = healthBar.Q<VisualElement>("Buff");
         buffRoundLabel = buffElement.Q<Label>("BuffRound");
+
+        intentElement = healthBar.Q<VisualElement>("Intent");
+        intentAmountLable = intentElement.Q<Label>("IntentAmount"); ;
         
         buffElement.style.display = DisplayStyle.None;
         defenseElement.style.display = DisplayStyle.None;
+        intentElement.style.display = DisplayStyle.None;
     }
 
     private void Update()
@@ -98,5 +110,31 @@ public class HealthBarController : MonoBehaviour
             //更新Buff图标
             buffElement.style.backgroundImage = currentCharacter.baseStrength > 1f ? new StyleBackground(buffSprite) : new StyleBackground(debuffSprite);
         }
+    }
+    
+    /// <summary>
+    /// 玩家回合开始执行
+    /// </summary>
+    public void SetIntentElement()
+    {
+        intentElement.style.display = DisplayStyle.Flex;
+        intentElement.style.backgroundImage = new StyleBackground(enemy.currentAction.intentSprite);
+        
+        //判断是否攻击
+        var value = enemy.currentAction.effct.value;
+        if (enemy.currentAction.effct.GetType() == typeof(DamageEffct))
+        {
+            value = (int)math.round(enemy.currentAction.effct.value * enemy.baseStrength);
+        }
+
+        intentAmountLable.text = value.ToString();
+    }
+    
+    /// <summary>
+    /// 敌人回合结束执行
+    /// </summary>
+    public void HideIntentElement()
+    {
+        intentElement.style.display = DisplayStyle.None;
     }
 }
