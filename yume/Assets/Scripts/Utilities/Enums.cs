@@ -29,7 +29,7 @@ public enum RoomState
     Attainable,
 }
 
-public enum CardTypte
+public enum CardType    
 {
     Attack,
     Defense,

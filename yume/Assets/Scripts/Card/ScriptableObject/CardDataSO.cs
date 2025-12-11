@@ -7,7 +7,7 @@ public class CardDataSO : ScriptableObject
     public string cardName;
     public Sprite cardIcon;
     public int cost;
-    public CardTypte cardType;
+    public CardType cardType;
     [TextArea]
     public string description;
     

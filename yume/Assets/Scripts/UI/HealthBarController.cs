@@ -89,8 +89,8 @@ public class HealthBarController : MonoBehaviour
             }
             
             //更新防御属性
-            defenseElement.style.display = currentCharacter.defanse.currentValue > 0 ? DisplayStyle.Flex : DisplayStyle.None;
-            defenseAmountLabel.text = currentCharacter.defanse.currentValue.ToString();
+            defenseElement.style.display = currentCharacter.defense.currentValue > 0 ? DisplayStyle.Flex : DisplayStyle.None;
+            defenseAmountLabel.text = currentCharacter.defense.currentValue.ToString();
             
             //更新Buff属性
             buffElement.style.display = currentCharacter.buffRound.currentValue > 0 ? DisplayStyle.Flex : DisplayStyle.None;

@@ -9,11 +9,11 @@ public class DefenseEffect : Effect
     {
         if (targetType == EffectTargetType.Self)
         {
-            from.UpdateDefanse(value);
+            from.Updatedefense(value);
         }
         else if(targetType == EffectTargetType.Target)
         {
-            target.UpdateDefanse(value);
+            target.Updatedefense(value);
         }
     }
 }

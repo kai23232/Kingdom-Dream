@@ -36,11 +36,11 @@ public class CardDragHandler : MonoBehaviour,IBeginDragHandler, IDragHandler, IE
             return;
         switch (currentCard.CardData.cardType)
         {
-            case CardTypte.Attack:
+            case CardType.Attack:
                 currentArrow = Instantiate(arrowPrefab, transform);
                 break;
-            case CardTypte.Abilities:
-            case CardTypte.Defense:
+            case CardType.Abilities:
+            case CardType.Defense:
                 canMove = true;
                 break;
         }

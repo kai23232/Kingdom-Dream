@@ -40,9 +40,9 @@ public class Card : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
         descriptionText.text = CardData.description;
         typeText.text = CardData.cardType switch
         {
-            CardTypte.Attack => "攻击",
-            CardTypte.Defense => "防御",
-            CardTypte.Abilities => "能力",
+            CardType.Attack => "攻击",
+            CardType.Defense => "防御",
+            CardType.Abilities => "能力",
             _ => "未知"
         };
         

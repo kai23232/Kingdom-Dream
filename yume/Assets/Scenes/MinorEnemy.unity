@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 510694014}
   - component: {fileID: 510694013}
   m_Layer: 0
-  m_Name: Spine Mecanim GameObject (MinorEnemy)
+  m_Name: Enemy Animator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -523,7 +523,7 @@ MonoBehaviour:
   isDead: 0
   maxHp: 50
   hp: {fileID: 11400000, guid: 9c17cbc27e904ec44afb8e1bcacc9091, type: 2}
-  defanse: {fileID: 11400000, guid: cceb4eab77e7b7d4b9d13e517a2b0554, type: 2}
+  defense: {fileID: 11400000, guid: cceb4eab77e7b7d4b9d13e517a2b0554, type: 2}
   buff: {fileID: 112447109}
   debuff: {fileID: 1835320930}
   baseStrength: 1
