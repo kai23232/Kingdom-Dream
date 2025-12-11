@@ -50,7 +50,7 @@ public class CardDeck : MonoBehaviour
     
     public void NewTurnDrawCards(object data)
     {
-        player.NewTurn();
+        //player.NewTurn();
         DrawCard(3);
     }
     

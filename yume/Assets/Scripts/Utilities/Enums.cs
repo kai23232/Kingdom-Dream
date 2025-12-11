@@ -38,7 +38,7 @@ public enum CardTypte
 
 public enum EffectTargetType
 {
-    Selt,
+    Self,
     Target,
     All
 }

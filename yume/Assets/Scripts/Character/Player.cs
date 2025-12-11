@@ -26,7 +26,7 @@ public class Player : CharacterBase
     public void NewTurn()
     {
         CurrentMana = maxMana;
-        ResetDefanse();
+        //ResetDefense();
     }
 
     public void UpdateMana(int cost)

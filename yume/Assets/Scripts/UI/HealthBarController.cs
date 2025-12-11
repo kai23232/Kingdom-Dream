@@ -15,6 +15,13 @@ public class HealthBarController : MonoBehaviour
     private VisualElement defenseElement;
     private Label defenseAmountLabel;
 
+    private VisualElement buffElement;
+    private Label buffRoundLabel;
+    
+    [Header("Buff Sprite")]
+    public Sprite buffSprite;
+    public Sprite debuffSprite;
+
     private void Awake()
     {
         currentCharacter = GetComponent<CharacterBase>();
@@ -36,6 +43,10 @@ public class HealthBarController : MonoBehaviour
         defenseElement = healthBar.Q<VisualElement>("Defense");
         defenseAmountLabel = defenseElement.Q<Label>("DefenseAmount");
         
+        buffElement = healthBar.Q<VisualElement>("Buff");
+        buffRoundLabel = buffElement.Q<Label>("BuffRound");
+        
+        buffElement.style.display = DisplayStyle.None;
         defenseElement.style.display = DisplayStyle.None;
     }
 
@@ -77,8 +88,15 @@ public class HealthBarController : MonoBehaviour
                 healthBar.AddToClassList("highHealth");
             }
             
+            //更新防御属性
             defenseElement.style.display = currentCharacter.defanse.currentValue > 0 ? DisplayStyle.Flex : DisplayStyle.None;
             defenseAmountLabel.text = currentCharacter.defanse.currentValue.ToString();
+            
+            //更新Buff属性
+            buffElement.style.display = currentCharacter.buffRound.currentValue > 0 ? DisplayStyle.Flex : DisplayStyle.None;
+            buffRoundLabel.text = currentCharacter.buffRound.currentValue.ToString();
+            //更新Buff图标
+            buffElement.style.backgroundImage = currentCharacter.baseStrength > 1f ? new StyleBackground(buffSprite) : new StyleBackground(debuffSprite);
         }
     }
 }

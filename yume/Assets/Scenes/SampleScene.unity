@@ -1150,6 +1150,7 @@ GameObject:
   - component: {fileID: 1266985358}
   - component: {fileID: 1266985359}
   - component: {fileID: 1266985361}
+  - component: {fileID: 1266985362}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -1193,8 +1194,9 @@ MonoBehaviour:
   defanse: {fileID: 11400000, guid: acf4df8ba52de714b9d36ef0616c9b8a, type: 2}
   buff: {fileID: 864850635}
   debuff: {fileID: 1017223258}
+  buffRound: {fileID: 11400000, guid: 7aed228a1ad9a564eb2cc5382547e921, type: 2}
   playerMana: {fileID: 11400000, guid: c7691447b8ffdbc4c88de9829b5cc66a, type: 2}
-  maxMana: 1
+  maxMana: 3
 --- !u!114 &1266985358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1244,6 +1246,58 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: UpdateMana
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1266985362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266985355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817de32bd4d667143ac7fc3a6b59c85e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSO: {fileID: 11400000, guid: b720aa942b3111542b555b410faf8370, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1266985357}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: NewTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1266985357}
+        m_TargetAssemblyTypeName: CharacterBase, Assembly-CSharp
+        m_MethodName: ResetDefense
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1266985357}
+        m_TargetAssemblyTypeName: CharacterBase, Assembly-CSharp
+        m_MethodName: UpdateStrengthRound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -525,6 +525,7 @@ MonoBehaviour:
   defanse: {fileID: 11400000, guid: cceb4eab77e7b7d4b9d13e517a2b0554, type: 2}
   buff: {fileID: 112447109}
   debuff: {fileID: 1835320930}
+  buffRound: {fileID: 11400000, guid: e832dc4b6a709a644bddba7c7de0aeb5, type: 2}
 --- !u!114 &820805428
 MonoBehaviour:
   m_ObjectHideFlags: 0

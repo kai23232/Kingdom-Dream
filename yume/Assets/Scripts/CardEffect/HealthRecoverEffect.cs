@@ -7,7 +7,7 @@ public class HealthRecoverEffect : Effect
 {
     public override void Execute(CharacterBase from, CharacterBase target)
     {
-        if (targetType == EffectTargetType.Selt)
+        if (targetType == EffectTargetType.Self)
         {
             from.HpHeal(value);
         }

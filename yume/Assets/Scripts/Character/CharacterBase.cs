@@ -19,6 +19,12 @@ public class CharacterBase : MonoBehaviour
     public GameObject buff;
     public GameObject debuff;
     
+    [Header("力量相关")]
+    //力量相关
+    public float baseStrength = 1f;
+    public float strengthEffct = 0.5f;
+    public IntVariable buffRound;
+    
     protected virtual void Awake()
     {
         animator = GetComponentInChildren<Animator>();
@@ -28,6 +34,7 @@ public class CharacterBase : MonoBehaviour
     {
         hp.maxValue = maxHp;
         CurrentHp = MaxHp;
+        buffRound.SetValue(0);
     }
     
     public virtual void TakeDamage(int damage)
@@ -52,7 +59,7 @@ public class CharacterBase : MonoBehaviour
         this.defanse.currentValue += amount;
     }
     
-    public void ResetDefanse()
+    public void ResetDefense()
     {
         this.defanse.SetValue(0);
     }
@@ -64,6 +71,42 @@ public class CharacterBase : MonoBehaviour
         if (CurrentHp > MaxHp)
         {
             CurrentHp = MaxHp;
+        }
+    }
+    
+    public void SetUpStrength(int round,bool isPositive)
+    {
+        if (isPositive)
+        {
+            float newStrength = baseStrength +  strengthEffct;
+            baseStrength = Mathf.Min(newStrength,1.5f);
+            buff.SetActive(true);
+        }
+        else
+        {
+            float newStrength = baseStrength -  strengthEffct;
+            baseStrength = Mathf.Max(newStrength,0.5f);
+            debuff.SetActive(true);
+        }
+        
+        var currentRound = buffRound.currentValue + round;
+        
+        if(baseStrength == 1)
+            buffRound.SetValue(0);
+        else
+            buffRound.SetValue(currentRound);
+    }
+    
+    /// <summary>
+    /// 回合转换事件函数
+    /// </summary>
+    public void UpdateStrengthRound()
+    {
+        buffRound.SetValue(buffRound.currentValue - 1);
+        if(buffRound.currentValue <= 0)
+        {
+            buffRound.SetValue(0);
+            baseStrength = 1f;
         }
     }
 }
