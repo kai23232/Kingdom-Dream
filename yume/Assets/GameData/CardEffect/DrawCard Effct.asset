@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcf15d8eacda33249945ba6c1bd68f59, type: 3}
-  m_Name: "\u6BD2\u836F"
+  m_Script: {fileID: 11500000, guid: c9b9fb6820eec3946a3f889962f372fa, type: 3}
+  m_Name: DrawCard Effct
   m_EditorClassIdentifier: 
-  cardName: "\u6BD2\u836F"
-  cardIcon: {fileID: 21300000, guid: 51e90e2f352d93d49b72bebce22d5c10, type: 3}
-  cost: 1
-  cardType: 2
-  description: "\u65BD\u52A0\u4E2D\u6BD2\u6548\u679C"
+  value: 2
+  targetType: 0
+  drawCardEvent: {fileID: 11400000, guid: 37bb3b39e5e90cd46827eb6adcf2a7f5, type: 2}

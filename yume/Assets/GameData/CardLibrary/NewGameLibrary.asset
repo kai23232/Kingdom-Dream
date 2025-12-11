@@ -23,3 +23,5 @@ MonoBehaviour:
     amount: 5
   - cardData: {fileID: 11400000, guid: 4c8ed9b66ea22c643baf5b0d37392988, type: 2}
     amount: 5
+  - cardData: {fileID: 11400000, guid: 004e0c85d84207340b23e0fb3548b182, type: 2}
+    amount: 5

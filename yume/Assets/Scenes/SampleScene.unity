@@ -656,8 +656,9 @@ GameObject:
   - component: {fileID: 754389395}
   - component: {fileID: 754389396}
   - component: {fileID: 754389397}
+  - component: {fileID: 754389398}
   m_Layer: 0
-  m_Name: CaedDeck
+  m_Name: CardDeck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -772,6 +773,34 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: CardDeck, Assembly-CSharp
         m_MethodName: OnPlayerTurnEnd
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &754389398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754389392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b75e84f04c08f344b317b50dfaccaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSO: {fileID: 11400000, guid: 37bb3b39e5e90cd46827eb6adcf2a7f5, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 754389393}
+        m_TargetAssemblyTypeName: CardDeck, Assembly-CSharp
+        m_MethodName: DrawCard
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1194,6 +1223,8 @@ MonoBehaviour:
   defanse: {fileID: 11400000, guid: acf4df8ba52de714b9d36ef0616c9b8a, type: 2}
   buff: {fileID: 864850635}
   debuff: {fileID: 1017223258}
+  baseStrength: 1
+  strengthEffct: 0.5
   buffRound: {fileID: 11400000, guid: 7aed228a1ad9a564eb2cc5382547e921, type: 2}
   playerMana: {fileID: 11400000, guid: c7691447b8ffdbc4c88de9829b5cc66a, type: 2}
   maxMana: 3
@@ -1226,6 +1257,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthBarTransform: {fileID: 1791229311}
+  buffSprite: {fileID: 21300000, guid: 810448b82870c45058f8b2de5423274a, type: 3}
+  debuffSprite: {fileID: 21300000, guid: a34550cedb3234dc085a67e7fb9bf5c8, type: 3}
 --- !u!114 &1266985361
 MonoBehaviour:
   m_ObjectHideFlags: 0
