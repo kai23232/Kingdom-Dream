@@ -40,11 +40,33 @@ public class Enemy : CharacterBase
 
    public virtual void Skill()
    {
-      currentAction.effct.Execute(this,this);
+      //animator.SetTrigger("skill");
+      //currentAction.effct.Execute(this,this);
+      StartCoroutine(ProcessDelayAction("skill"));
    }
 
    public virtual void Attack()
    {
-      currentAction.effct.Execute(this,player);
+      //animator.SetTrigger("attack");
+      //currentAction.effct.Execute(this,player);
+      StartCoroutine(ProcessDelayAction("attack"));
+   }
+
+   IEnumerator ProcessDelayAction(string actionName)
+   {
+      animator.SetTrigger(actionName);
+      
+      yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime % 1.0f > 0.6f 
+                                       && !animator.IsInTransition(0)
+                                       && animator.GetCurrentAnimatorStateInfo(0).IsName(actionName));
+      
+      if(actionName == "attack")
+      {
+         currentAction.effct.Execute(this,player);
+      }
+      else
+      {
+         currentAction.effct.Execute(this,this);
+      }
    }
 }

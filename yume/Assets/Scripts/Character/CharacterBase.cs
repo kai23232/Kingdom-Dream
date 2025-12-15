@@ -37,6 +37,11 @@ public class CharacterBase : MonoBehaviour
         buffRound.SetValue(0);
     }
     
+    protected virtual void Update()
+    {
+        animator.SetBool("isDead",isDead);   
+    }
+    
     public virtual void TakeDamage(int damage)
     {
         var currentDamage = (damage - defense.currentValue) >= 0 ? (damage - defense.currentValue) : 0;
@@ -44,7 +49,8 @@ public class CharacterBase : MonoBehaviour
         if (CurrentHp > currentDamage)
         {
             CurrentHp -= currentDamage;
-            Debug.Log("当前血量：" + CurrentHp);
+            //Debug.Log("当前血量：" + CurrentHp);
+            animator.SetTrigger("hit");
         }
         else
         {
