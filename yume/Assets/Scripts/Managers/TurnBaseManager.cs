@@ -103,4 +103,10 @@ public class TurnBaseManager : MonoBehaviour
                 break;
         }
     }
+    
+    public void OnLoadMapEvent(object data)
+    {
+        battleEnd = true;
+        playerObj.SetActive(false);
+    }
 }

@@ -536,6 +536,7 @@ GameObject:
   - component: {fileID: 544793306}
   - component: {fileID: 544793305}
   - component: {fileID: 544793308}
+  - component: {fileID: 544793309}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -630,6 +631,82 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &544793309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544793304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817de32bd4d667143ac7fc3a6b59c85e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSO: {fileID: 11400000, guid: d0264d34b23a6404bbb602b57dc3bea3, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 544793306}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: OnRoomLoadedEvent
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &616009868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 616009870}
+  - component: {fileID: 616009869}
+  m_Layer: 0
+  m_Name: PickCard Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &616009869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616009868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: a5805315e9cccb74fbf4570ba6a6b8a4, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 1fa9004d9e9cd4b40848f5eaa8f94588, type: 3}
+  m_SortingOrder: 2
+--- !u!4 &616009870
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616009868}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &748024980
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,6 +988,7 @@ GameObject:
   - component: {fileID: 802693100}
   - component: {fileID: 802693101}
   - component: {fileID: 802693102}
+  - component: {fileID: 802693103}
   m_Layer: 0
   m_Name: TurnBase Manager
   m_TagString: Untagged
@@ -945,7 +1023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80db0a8dde4c0ff4b96437624160aab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerObj: {fileID: 0}
+  playerObj: {fileID: 1266985355}
   battleEnd: 0
   energyTurnDuration: 3
   playerTurnDuration: 10
@@ -998,6 +1076,34 @@ MonoBehaviour:
       - m_Target: {fileID: 802693100}
         m_TargetAssemblyTypeName: TurnBaseManager, Assembly-CSharp
         m_MethodName: OnRoomLoadedEvent
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &802693103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802693098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817de32bd4d667143ac7fc3a6b59c85e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSO: {fileID: 11400000, guid: ddf77f16913083343b24251055c88ab8, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 802693100}
+        m_TargetAssemblyTypeName: TurnBaseManager, Assembly-CSharp
+        m_MethodName: OnLoadMapEvent
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1255,6 +1361,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1017223258}
   m_Mesh: {fileID: 0}
+--- !u!1 &1026449181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1026449182}
+  m_Layer: 0
+  m_Name: GameOver Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1026449182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026449181}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1099904563
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,6 +1437,7 @@ GameObject:
   - component: {fileID: 1209363995}
   - component: {fileID: 1209363994}
   - component: {fileID: 1209363993}
+  - component: {fileID: 1209363999}
   m_Layer: 0
   m_Name: UI Manager
   m_TagString: Untagged
@@ -1432,8 +1570,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameplayPanel: {fileID: 1301731961}
-  gameWinPanel: {fileID: 0}
-  gameOverPanel: {fileID: 0}
+  gameWinPanel: {fileID: 1436371203}
+  gameOverPanel: {fileID: 1026449181}
+  pickCardPanel: {fileID: 616009868}
 --- !u!4 &1209363998
 Transform:
   m_ObjectHideFlags: 0
@@ -1449,6 +1588,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1209363999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209363992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817de32bd4d667143ac7fc3a6b59c85e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSO: {fileID: 11400000, guid: ac7d0dcddd5e36b4d866068d8d85056b, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1209363997}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1266985355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1961,6 +2128,69 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff: {fileID: 864850635}
   debuff: {fileID: 1017223258}
+--- !u!1 &1436371203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1436371205}
+  - component: {fileID: 1436371204}
+  - component: {fileID: 1436371206}
+  m_Layer: 0
+  m_Name: GameWin Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1436371204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436371203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: a5805315e9cccb74fbf4570ba6a6b8a4, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 4de71fd6065ac224dbdf903e06dff8df, type: 3}
+  m_SortingOrder: 1
+--- !u!4 &1436371205
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436371203}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1436371206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436371203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28db2969e1df99243a10484c2db1c7a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadMapEvent: {fileID: 11400000, guid: ddf77f16913083343b24251055c88ab8, type: 2}
+  pickCardEvent: {fileID: 11400000, guid: ac7d0dcddd5e36b4d866068d8d85056b, type: 2}
 --- !u!1 &1695756190
 GameObject:
   m_ObjectHideFlags: 0
@@ -2041,7 +2271,7 @@ MonoBehaviour:
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   afterLoadRoomEvent: {fileID: 11400000, guid: d0264d34b23a6404bbb602b57dc3bea3, type: 2}
-  updateRoomEvent: {fileID: 0}
+  updateRoomEvent: {fileID: 11400000, guid: af746085b8cd68340b86b3c818c2c9c3, type: 2}
 --- !u!114 &1695756194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2250,3 +2480,6 @@ SceneRoots:
   - {fileID: 1266985356}
   - {fileID: 2032614814}
   - {fileID: 1301731963}
+  - {fileID: 1436371205}
+  - {fileID: 1026449182}
+  - {fileID: 616009870}
