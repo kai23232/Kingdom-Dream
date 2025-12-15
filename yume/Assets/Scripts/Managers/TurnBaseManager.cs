@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class TurnBaseManager : MonoBehaviour
 {
+    public GameObject playerObj;
+    
     private bool isPlayerTurn = false;
     private bool isEnemyTurn = false;
     public bool battleEnd;
@@ -49,6 +51,7 @@ public class TurnBaseManager : MonoBehaviour
         isEnemyTurn = false;
         battleEnd = false;
         timeCounter = 0;
+        playerTurnBeginEvent.RaiseEvent(null,this);
     }
     
     public void PlayerTurnBegin()
@@ -72,5 +75,32 @@ public class TurnBaseManager : MonoBehaviour
         timeCounter = 0f;
         isEnemyTurn = true;
         isPlayerTurn = false;
+    }
+    
+    /// <summary>
+    /// 注册时间函数 after room load
+    /// </summary>
+    /// <param name="data"></param>
+    public void OnRoomLoadedEvent(object data)
+    {
+        Room currentRoom = data as Room;
+        switch (currentRoom.roomDataSO.roomType)
+        {
+            case RoomType.EliteEnemy:
+            case RoomType.MinorEnemy:
+            case RoomType.Boss:
+                playerObj.SetActive(true);
+                GameStart();
+                break;
+            case RoomType.Shop:
+                playerObj.SetActive(false);
+                break;
+            case RoomType.Treasure:
+                playerObj.SetActive(false);
+                break;
+            case RoomType.RestRoom:
+                playerObj.SetActive(true);
+                break;
+        }
     }
 }

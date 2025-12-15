@@ -24,7 +24,9 @@ public class CharacterBase : MonoBehaviour
     public float baseStrength = 1f;
     public float strengthEffct = 0.5f;
     public IntVariable buffRound;
-    
+
+    [Header("广播")] 
+    public ObjectEventSO characterDeadEvent;
     protected virtual void Awake()
     {
         animator = GetComponentInChildren<Animator>();
@@ -35,11 +37,6 @@ public class CharacterBase : MonoBehaviour
         hp.maxValue = maxHp;
         CurrentHp = MaxHp;
         buffRound.SetValue(0);
-    }
-    
-    protected virtual void Update()
-    {
-        animator.SetBool("isDead",isDead);   
     }
     
     public virtual void TakeDamage(int damage)
@@ -57,6 +54,8 @@ public class CharacterBase : MonoBehaviour
             CurrentHp = 0;
             //死亡
             isDead = true;
+            characterDeadEvent.RaiseEvent(this,this);
+            animator.SetBool("isDead",isDead); 
         }
     }
     

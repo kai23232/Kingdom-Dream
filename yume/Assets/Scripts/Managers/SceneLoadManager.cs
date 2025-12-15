@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,34 +14,41 @@ public class SceneLoadManager : MonoBehaviour
     
     [Header("广播")]
     public ObjectEventSO afterLoadRoomEvent;
-    
+
+    public ObjectEventSO updateRoomEvent;
+
+    private void Start()
+    {
+        currentRoomVector = Vector2Int.one * -1;
+    }
+
     /// <summary>
     /// 在房间加载事件中监听
     /// </summary>
     /// <param name="data"></param>
     public void OnLoadRoomEvent(object data)
     {
+        Room currentRoom = data as Room;
         if (data is Room)
         {
-            Room currentRoom = data as Room;
             currentRoomVector = new Vector2Int(currentRoom.column, currentRoom.line);
 
             currentScene = currentRoom.roomDataSO.sceneToLoad;
         }
         
-        StartCoroutine(LoadAndUnload());
-        
-        //广播加载完成事件
-        afterLoadRoomEvent.RaiseEvent(currentRoomVector, this);
+        StartCoroutine(LoadAndUnload(currentRoom));
     }
     
     //卸载场景后加载房间
-    private IEnumerator LoadAndUnload()
+    private IEnumerator LoadAndUnload(Room room)
     {
         //卸载当前场景
         yield return StartCoroutine(UnloadSceneAsync());
         //加载房间
-        StartCoroutine(LoadSceneAsync());
+        yield return StartCoroutine(LoadSceneAsync());
+        
+        //广播加载完成事件
+        afterLoadRoomEvent.RaiseEvent(room, this);
     }
     //异步加载场景
     private IEnumerator LoadSceneAsync()
@@ -66,6 +74,8 @@ public class SceneLoadManager : MonoBehaviour
     private IEnumerator LoadMapAsync()
     {
         yield return StartCoroutine(UnloadSceneAsync());
+        if(currentRoomVector != Vector2Int.one * -1)
+            updateRoomEvent.RaiseEvent(currentRoomVector, this);
         currentScene = map;
         StartCoroutine(LoadSceneAsync());
     }

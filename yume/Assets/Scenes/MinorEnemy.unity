@@ -530,6 +530,7 @@ MonoBehaviour:
   baseStrength: 1
   strengthEffct: 0.5
   buffRound: {fileID: 11400000, guid: e832dc4b6a709a644bddba7c7de0aeb5, type: 2}
+  characterDeadEvent: {fileID: 11400000, guid: 93eb7a072eee538418c55916788e0035, type: 2}
   actionDataSO: {fileID: 11400000, guid: 2dcd39452edf09b409e2e9fe5ddc933a, type: 2}
   currentAction:
     intentSprite: {fileID: 0}

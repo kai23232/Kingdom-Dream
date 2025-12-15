@@ -1,10 +1,19 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     [Header("地图布局")]
     public MapLayoutSO mapLayout;
+
+
+    public List<Enemy> aliveEnemtList = new List<Enemy>();
     
+    [Header("广播")]
+    public ObjectEventSO gameWinEvent;
+
+    public ObjectEventSO gameOverEvent;
     
     /// <summary>
     /// 更新房间的事件监听函数
@@ -34,5 +43,42 @@ public class GameManager : MonoBehaviour
             var linkRoomData = mapLayout.mapRoomDataList.Find(x => x.column == link.x && x.row == link.y);
             linkRoomData.roomState = RoomState.Attainable;
         }
+        
+        aliveEnemtList.Clear();
+    }
+    
+    public void OnRoomLoadedEvent(object data)
+    {
+        var enemys = FindObjectsByType<Enemy>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        foreach (var enemy in enemys)
+        {
+            aliveEnemtList.Add(enemy);
+        }
+    }
+    
+    public void OnCharacterDeadEvent(object character)
+    {
+        if (character is Player)
+        {
+            //发出失败的通知
+            StartCoroutine(EventDelayAction(gameOverEvent));
+        }
+
+        if (character is Enemy)
+        {
+            aliveEnemtList.Remove(character as Enemy);
+            //检查是否所有敌人都死亡
+            if (aliveEnemtList.Count == 0)
+            {
+                //发出胜利通知
+                StartCoroutine(EventDelayAction(gameWinEvent));
+            }
+        }
+    }
+
+    IEnumerator EventDelayAction(ObjectEventSO eventSO)
+    {
+        yield return new WaitForSeconds(1.5f);
+        eventSO.RaiseEvent(null,this);
     }
 }

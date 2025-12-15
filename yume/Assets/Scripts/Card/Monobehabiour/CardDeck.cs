@@ -21,7 +21,7 @@ public class CardDeck : MonoBehaviour
     public IntEventSO drawAmountEvent;
     public IntEventSO discardAmountEvent;
     
-    
+    //TODO:测试用
     private void Start()
     {
         InitializeDeck();
@@ -161,5 +161,16 @@ public class CardDeck : MonoBehaviour
         {
             DiscardCard(handCardObjectList[i]);
         }
+    }
+
+    public void ReleaseAllCards(object obj)
+    {
+        foreach (var card in handCardObjectList)
+        {
+            cardManager.DiscardCard(card.gameObject);
+        }
+        
+        handCardObjectList.Clear();
+        InitializeDeck();
     }
 }
