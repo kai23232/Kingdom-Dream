@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     public ObjectEventSO gameOverEvent;
     
+
     /// <summary>
     /// 更新房间的事件监听函数
     /// </summary>
@@ -80,5 +82,11 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         eventSO.RaiseEvent(null,this);
+    }
+    
+    public void MapClear()
+    {
+        mapLayout.mapRoomDataList.Clear();
+        mapLayout.linePosList.Clear(); 
     }
 }

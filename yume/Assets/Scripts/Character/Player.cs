@@ -37,4 +37,12 @@ public class Player : CharacterBase
             CurrentMana = 0;
         }
     }
+
+    public void NewGame()
+    {
+        isDead = false;
+        CurrentHp = maxHp;
+        CurrentMana = maxMana;
+        buffRound.currentValue = 0;
+    }
 }

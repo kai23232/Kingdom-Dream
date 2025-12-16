@@ -38,13 +38,13 @@ public class UIManager : MonoBehaviour
 
     public void OnGameWinEvent()
     {
-        gameplayPanel.SetActive(false);
+        HideAllPanels();
         gameWinPanel.SetActive(true);
     }
     
     public void OnGameOverEvent()
     {
-        gameplayPanel.SetActive(false);
+        HideAllPanels();
         gameOverPanel.SetActive(true);
     }
     

@@ -33,6 +33,10 @@ public class HealthBarController : MonoBehaviour
     {
         enemy = GetComponent<Enemy>();
         currentCharacter = GetComponent<CharacterBase>();
+    }
+
+    private void OnEnable()
+    {
         InitHealthBar();
     }
 

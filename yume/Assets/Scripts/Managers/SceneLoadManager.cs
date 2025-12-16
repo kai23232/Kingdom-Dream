@@ -9,6 +9,7 @@ public class SceneLoadManager : MonoBehaviour
 {
     private AssetReference currentScene;
     public AssetReference map;
+    public AssetReference menu;
     
     private Vector2Int currentRoomVector;
     
@@ -20,6 +21,7 @@ public class SceneLoadManager : MonoBehaviour
     private void Start()
     {
         currentRoomVector = Vector2Int.one * -1;
+        LoadMenu();
     }
 
     /// <summary>
@@ -74,9 +76,21 @@ public class SceneLoadManager : MonoBehaviour
     private IEnumerator LoadMapAsync()
     {
         yield return StartCoroutine(UnloadSceneAsync());
-        if(currentRoomVector != Vector2Int.one * -1)
+        if(currentRoomVector != Vector2Int.one * -1 && currentScene != menu)
             updateRoomEvent.RaiseEvent(currentRoomVector, this);
         currentScene = map;
+        StartCoroutine(LoadSceneAsync());
+    }
+
+    public void LoadMenu()
+    {
+        StartCoroutine(LoadManuAsync());
+    }
+    private IEnumerator LoadManuAsync()
+    {
+        if(currentScene != null)
+            yield return StartCoroutine(UnloadSceneAsync());
+        currentScene = menu;
         StartCoroutine(LoadSceneAsync());
     }
 }

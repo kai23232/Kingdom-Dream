@@ -109,4 +109,15 @@ public class TurnBaseManager : MonoBehaviour
         battleEnd = true;
         playerObj.SetActive(false);
     }
+
+    public void OnbattleEnd()
+    {
+        battleEnd = true;
+        playerObj.SetActive(false);
+    }
+    
+    public void NewGame()
+    {
+        playerObj.GetComponent<Player>().NewGame();
+    }
 }
