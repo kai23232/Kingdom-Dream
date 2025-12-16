@@ -52,4 +52,10 @@ public class UIManager : MonoBehaviour
     {
         pickCardPanel.SetActive(true);
     }
+    
+    public void OnFinishPickCardEvent()
+    {
+        pickCardPanel.SetActive(false);
+    }
+    
 }

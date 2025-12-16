@@ -32,4 +32,9 @@ public class GameWinPanel : MonoBehaviour
     {
         loadMapEvent.RaiseEvent(null,this);
     }
+    
+    public void OnFinishPickCardEvent()
+    {
+        pickCardButton.style.display = DisplayStyle.None;
+    }
 }

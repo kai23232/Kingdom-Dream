@@ -1,11 +1,8 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.Rendering.VirtualTexturing;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using Random = UnityEngine.Random;
 
 public class CardManager : MonoBehaviour
 {
@@ -15,6 +12,8 @@ public class CardManager : MonoBehaviour
     [Header("卡牌库")]
     public CardLibrarySO newGameCardLibrary;
     public CardLibrarySO currentCardLibrary;
+
+    private int previousIndex = 0;
     
     private void Awake()
     {
@@ -66,5 +65,42 @@ public class CardManager : MonoBehaviour
     private void OnDisable()
     {
         currentCardLibrary.cardLibraryList.Clear();
+    }
+    
+    public CardDataSO GetNewCardData()
+    {
+        int randomIndex = 0;
+        do
+        {
+            randomIndex = Random.Range(0, cardDataList.Count);
+        } while (previousIndex == randomIndex);
+        previousIndex = randomIndex;
+        return cardDataList[randomIndex];
+    }
+    
+    /// <summary>
+    /// 解锁新的卡牌
+    /// </summary>
+    /// <param name="newCardData"></param>
+    public void UnLockCard(CardDataSO newCardData)
+    {
+        
+        int targetIndex = currentCardLibrary.cardLibraryList.FindIndex(x => x.cardData == newCardData);
+
+        if (targetIndex == -1)
+        {
+            var newCard = new CardLibraryEntry
+            {
+                cardData = newCardData,
+                amount = 1
+            };
+            currentCardLibrary.cardLibraryList.Add(newCard);
+        }
+        else
+        {
+            CardLibraryEntry target = currentCardLibrary.cardLibraryList[targetIndex];
+            target.amount++;
+            currentCardLibrary.cardLibraryList[targetIndex] = target;
+        }
     }
 }
