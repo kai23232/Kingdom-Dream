@@ -21,7 +21,7 @@ MonoBehaviour:
     roomType: 3
   - min: 2
     max: 5
-    roomType: 22
+    roomType: 18
   - min: 2
     max: 5
     roomType: 26

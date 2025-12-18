@@ -42,7 +42,7 @@ public class CharacterBase : MonoBehaviour
     public virtual void TakeDamage(int damage)
     {
         var currentDamage = (damage - defense.currentValue) >= 0 ? (damage - defense.currentValue) : 0;
-        var currentdefense = (damage - defense.currentValue) >= 0 ? 0 : defense.currentValue - damage;
+        defense.currentValue = (damage - defense.currentValue) >= 0 ? 0 : defense.currentValue - damage;
         if (CurrentHp > currentDamage)
         {
             CurrentHp -= currentDamage;

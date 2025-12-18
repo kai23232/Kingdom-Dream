@@ -17,7 +17,7 @@ public class Player : CharacterBase
     private void OnEnable()
     {
         playerMana.maxValue = maxMana;
-        CurrentMana = maxMana;
+        CurrentMana = 3;
     }
     
     /// <summary>
@@ -25,7 +25,11 @@ public class Player : CharacterBase
     /// </summary>
     public void NewTurn()
     {
-        CurrentMana = maxMana;
+        CurrentMana += 3;
+        if(CurrentMana > maxMana)
+        {
+            CurrentMana = maxMana;
+        }
         //ResetDefense();
     }
 
@@ -42,7 +46,7 @@ public class Player : CharacterBase
     {
         isDead = false;
         CurrentHp = maxHp;
-        CurrentMana = maxMana;
+        CurrentMana = 3;
         buffRound.currentValue = 0;
     }
 }

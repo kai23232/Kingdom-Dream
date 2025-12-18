@@ -13,7 +13,7 @@ public class GameWinPanel : MonoBehaviour
     public ObjectEventSO loadMapEvent;
     public ObjectEventSO pickCardEvent;
 
-    private void Awake()
+    private void OnEnable()
     {
         rootElement = GetComponent<UIDocument>().rootVisualElement;
         pickCardButton = rootElement.Q<Button>("PickCardButton");

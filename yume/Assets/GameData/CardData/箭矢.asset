@@ -16,6 +16,6 @@ MonoBehaviour:
   cardIcon: {fileID: 21300000, guid: e30eb9c3272550d49acfb818d86bd67b, type: 3}
   cost: 1
   cardType: 0
-  description: "\u9020\u6210<color=\"red\">3</color>\u70B9\u4F24\u5BB3"
+  description: "\u9020\u6210<color=\"red\">2</color>\u70B9\u4F24\u5BB3"
   effects:
-  - {fileID: 11400000, guid: 4aa12e154f75c6f4ab80470578e6a197, type: 2}
+  - {fileID: 11400000, guid: 70d6df5b23398d44bbf9bd345a4453df, type: 2}

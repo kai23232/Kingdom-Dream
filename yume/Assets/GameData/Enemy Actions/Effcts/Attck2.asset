@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b70979a573aac5449a4e73f051d98ae, type: 3}
   m_Name: Attck2
   m_EditorClassIdentifier: 
-  value: 15
+  value: 10
   targetType: 1

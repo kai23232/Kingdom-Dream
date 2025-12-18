@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a765b9c93b09ecc40b0b3d19030c558f, type: 3}
-  m_Name: MapLayout
+  m_Script: {fileID: 11500000, guid: 0b70979a573aac5449a4e73f051d98ae, type: 3}
+  m_Name: "\u5F11\u541B\u7A81\u523A"
   m_EditorClassIdentifier: 
-  mapRoomDataList: []
-  linePosList: []
+  value: 999
+  targetType: 1

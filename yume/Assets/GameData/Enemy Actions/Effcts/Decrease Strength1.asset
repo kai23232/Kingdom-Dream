@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eda220042bc35ec4cb3b2b45b0a85f5c, type: 3}
-  m_Name: Buff StrengthEffect
+  m_Name: Decrease Strength1
   m_EditorClassIdentifier: 
   value: 2
-  targetType: 0
+  targetType: 1

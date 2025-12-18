@@ -76,6 +76,12 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(EventDelayAction(gameWinEvent));
             }
         }
+
+        if (character is Boss)
+        {
+            //发出失败的通知
+            StartCoroutine(EventDelayAction(gameOverEvent));
+        }
     }
 
     IEnumerator EventDelayAction(ObjectEventSO eventSO)

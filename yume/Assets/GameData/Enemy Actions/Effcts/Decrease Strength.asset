@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a765b9c93b09ecc40b0b3d19030c558f, type: 3}
-  m_Name: MapLayout
+  m_Script: {fileID: 11500000, guid: eda220042bc35ec4cb3b2b45b0a85f5c, type: 3}
+  m_Name: Decrease Strength
   m_EditorClassIdentifier: 
-  mapRoomDataList: []
-  linePosList: []
+  value: 1
+  targetType: 1

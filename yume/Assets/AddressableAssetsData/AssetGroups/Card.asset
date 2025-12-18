@@ -47,12 +47,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - CardData
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 554155ba62954324792698cc39eb2f2d
-    m_Address: "\u65E0\u6687\u4E4B\u5251"
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - CardData
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 598ff899478292e49b398cd367a07152
     m_Address: "\u539F\u59CB\u8170\u5E26"
     m_ReadOnly: 0

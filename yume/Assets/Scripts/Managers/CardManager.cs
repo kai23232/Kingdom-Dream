@@ -92,14 +92,14 @@ public class CardManager : MonoBehaviour
             var newCard = new CardLibraryEntry
             {
                 cardData = newCardData,
-                amount = 1
+                amount = 5
             };
             currentCardLibrary.cardLibraryList.Add(newCard);
         }
         else
         {
             CardLibraryEntry target = currentCardLibrary.cardLibraryList[targetIndex];
-            target.amount++;
+            target.amount += 5;
             currentCardLibrary.cardLibraryList[targetIndex] = target;
         }
     }

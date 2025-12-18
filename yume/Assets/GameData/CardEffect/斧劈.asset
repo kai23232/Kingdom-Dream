@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b70979a573aac5449a4e73f051d98ae, type: 3}
-  m_Name: Normal Attack
+  m_Name: "\u65A7\u5288"
   m_EditorClassIdentifier: 
-  value: 6
+  value: 5
   targetType: 1

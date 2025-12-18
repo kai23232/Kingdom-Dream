@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: "\u706B\u7403\u672F"
   cardIcon: {fileID: 21300000, guid: e977c1562987f7e41b442f92c93f4234, type: 3}
-  cost: 2
+  cost: 4
   cardType: 0
-  description: "\u9020\u6210<color=\"red\">5</color>\u70B9\u4F24\u5BB3"
+  description: "\u9020\u6210<color=\"red\">10</color>\u70B9\u4F24\u5BB3"
+  effects:
+  - {fileID: 11400000, guid: 9f24a228cf33394479d32be1db14d84e, type: 2}
