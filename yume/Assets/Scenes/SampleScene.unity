@@ -1369,6 +1369,69 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864850635}
   m_Mesh: {fileID: 0}
+--- !u!1 &877551672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 877551674}
+  - component: {fileID: 877551673}
+  - component: {fileID: 877551675}
+  m_Layer: 0
+  m_Name: RestRoom Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &877551673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877551672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: a5805315e9cccb74fbf4570ba6a6b8a4, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 227b11b1124153647bf03aabb8ae1dc3, type: 3}
+  m_SortingOrder: 0
+--- !u!4 &877551674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877551672}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &877551675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877551672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb58a1939721ec54e8cf763ad84d29fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restEffect: {fileID: 11400000, guid: d5628f9f57bfce749980a9bb3a5d38d9, type: 2}
+  loadToMapEvent: {fileID: 11400000, guid: ddf77f16913083343b24251055c88ab8, type: 2}
 --- !u!1 &1017223258
 GameObject:
   m_ObjectHideFlags: 0
@@ -1738,6 +1801,7 @@ MonoBehaviour:
   gameWinPanel: {fileID: 1436371203}
   gameOverPanel: {fileID: 1026449181}
   pickCardPanel: {fileID: 616009868}
+  restRoomPanel: {fileID: 877551672}
 --- !u!4 &1209363998
 Transform:
   m_ObjectHideFlags: 0
@@ -2796,3 +2860,4 @@ SceneRoots:
   - {fileID: 1436371205}
   - {fileID: 1026449182}
   - {fileID: 616009870}
+  - {fileID: 877551674}

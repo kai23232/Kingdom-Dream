@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Menu Panel">
+        <Style src="project://database/Assets/UI/USS/GamePlayUSS.uss?fileID=7433441132597879392&amp;guid=5e98fbc3e2c3490429809203d5b06cf5&amp;type=3#GamePlayUSS" />
+        <ui:VisualElement name="Background" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Background/Title%20Background.jpg?fileID=2800000&amp;guid=abf6df836e0bd4fa2a1f2e7b0a29eadb&amp;type=3#Title Background&quot;);" />
+        <ui:VisualElement name="VisualElement" style="flex-grow: 1; position: absolute; height: 654px; width: 680px; top: 142px; left: 1238px; background-image: none;">
+            <ui:VisualElement name="Logo" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/UI%20Elements/GameLogo.png?fileID=2800000&amp;guid=aac4a914e6636479c89abb06d5df58e6&amp;type=3#GameLogo&quot;); -unity-background-scale-mode: scale-to-fit; height: 154px;" />
+            <ui:VisualElement name="Buttons" style="flex-grow: 1; justify-content: space-around;">
+                <ui:Button text="休息一下" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RestButton" class="turnbutton" style="background-image: url(&quot;project://database/Assets/Art/UI%20Elements/Button.png?fileID=2800000&amp;guid=1547f1fe317e34067b4317cb769df353&amp;type=3#Button&quot;); -unity-background-scale-mode: scale-to-fit; background-color: rgba(188, 188, 188, 0); height: 118px; font-size: 45px; color: rgb(255, 255, 255); -unity-font-style: bold-and-italic; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+                <ui:Button text="返回地图" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BackToMapButton" class="turnbutton" style="background-image: url(&quot;project://database/Assets/Art/UI%20Elements/Button.png?fileID=2800000&amp;guid=1547f1fe317e34067b4317cb769df353&amp;type=3#Button&quot;); -unity-background-scale-mode: scale-to-fit; background-color: rgba(188, 188, 188, 0); height: 118px; font-size: 45px; color: rgb(255, 255, 255); -unity-font-style: bold-and-italic; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

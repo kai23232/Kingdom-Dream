@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d57f5357c5320b4185335e3799fe706, type: 3}
-  m_Name: PlayerHP
+  m_Script: {fileID: 11500000, guid: a4ab59b278450ac4888886152a812167, type: 3}
+  m_Name: Rest Effct
   m_EditorClassIdentifier: 
-  maxValue: 60
-  currentValue: 39
-  onValueChanged: {fileID: 11400000, guid: 56575b1a3e2ac0647901d0008c264e62, type: 2}
-  description: 
+  value: 30
+  targetType: 0
